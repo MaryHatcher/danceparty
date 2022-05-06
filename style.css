@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'CirrusCumulus';
+    src: url('fonts/CirrusCumulus.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Pleine';
+    src: url('fonts/Typefesse_Pleine.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Kaerukaeru';
+    src: url('fonts/kaerukaeru-Regular.woff2') format('woff2');
+  }
+
+textarea { 
+    font-family: 'Kaerukaeru';
+    color:white;
+    text-align: left;
+    font-size: 300px;
+    z-index:1;
+    background: transparent;
+    border: none;
+    resize: none;
+    overflow: hidden;
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+body{    
+    background-size: cover;
+
+}
+img {
+    pointer-events: none;
+    z-index:2;
+    height: 20vh;
+}
+#textdiv {
+    text-align: center;
+    width:100%;
+    height:100%;
+}
+#dancefloor {
+    position:fixed;
+    bottom:0;
+    width:87vw;
+    height:40vh;
+
+}
+
+#introdiv {
+    position:fixed;
+    height: 100vh;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:40px;
+  }
+  
+  .intro {
+    width: 26ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
