@@ -12,17 +12,62 @@
     font-family: 'Kaerukaeru';
     src: url('fonts/kaerukaeru-Regular.woff2') format('woff2');
   }
+  @font-face {
+    font-family: 'Victoriana';
+    src: url('fonts/vtf_victorianna_thin_talic-webfont.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'Victoriana2';
+    src: url('fonts/vtf_victorianna_thin-webfont.woff') format('woff');
+  }
 
+  #police {
+    position: fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    overflow:hidden;
+    display: none;
+    animation: rotation 2s infinite linear;
+    z-index:50;
+  }
+
+
+
+#header {
+    display: grid;
+    grid-template-columns:repeat(6, min-content auto [col-start]);
+    width:auto;
+    height:30px;
+    column-gap: 8px;
+}
+.child {
+    font-family: "Victoriana";
+    line-height:1.5;
+    font-size:17;
+    display: inline-grid;
+    color:whitesmoke;
+    width:max-content;
+}
+
+.key {
+    display: inline-grid;
+    width: 23px;  
+    height:auto;
+}
 textarea { 
-    font-family: 'Kaerukaeru';
+    font-family: 'Times New Roman';
     color:white;
     text-align: left;
-    font-size: 300px;
+    font-size: 40px;
     z-index:1;
     background: transparent;
     border: none;
     resize: none;
     overflow: hidden;
+    caret-color: transparent;
+    
 }
 textarea:focus, input:focus{
     outline: none;
@@ -52,29 +97,37 @@ img {
 #introdiv {
     position:fixed;
     height: 100vh;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:40px;
+    width:100%;
+    z-index:4;
+    text-align:center;
   }
   
   .intro {
-    width: 26ch;
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    font-family: monospace;
-    font-size: 2em;
+    margin-top:17%;
+    font-family: "Victoriana2";
+    color:black;
+    height:auto;
+    font-size: 25px;
   }
-  
-  @keyframes typing {
+  input{
+    margin-top:70px;
+  }
+
+  #fakebg {
+    position:fixed;
+    background-color:white;
+    width: 100%;
+    height: 100%;
+    z-index:3;
+    overflow:hidden;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border: 15px white;
+  }
+  @keyframes rotation {
     from {
-      width: 0
+      transform: rotate(0deg);
     }
-  }
-      
-  @keyframes blink {
-    50% {
-      border-color: transparent
+    to {
+      transform: rotate(359deg);
     }
   }
