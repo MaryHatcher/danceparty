@@ -1,5 +1,5 @@
 
-let audiocount = 0;
+var audiocount = 0;
 let copcount;
 var imgCount = 0;
 var images = ["images/dancefloor2.gif", "images/dancefloor3.gif", "images/dancefloor4.gif", "images/dancefloor5.gif"];
@@ -10,7 +10,6 @@ window.addEventListener('load', ()=> {
     document.body.style.backgroundImage = "url(images/dancefloor2.gif)";
 });
 
-let audio = document.getElementById("music");
 
 addEventListener("keydown", function(event) {
     document.getElementById("textbox").focus();
@@ -38,6 +37,7 @@ addEventListener("keydown", function(event) {
     if (event.key === "Escape"){
         console.log("hi");
         this.document.getElementById("police").style.display = "block";
+        document.getElementById('textbox').value = "";
         partyguests.forEach(partyguest => {
             partyguest.remove();
           });
@@ -49,21 +49,15 @@ addEventListener("keydown", function(event) {
         }, 2000);   
     }
     if (event.key === "Alt"){
-        if (audiocount < 1){
-            audiocount++;
-        }else {
-            audiocount=0;
+        audiocount++;
+        if (audiocount === 1){
+            document.getElementById('audio').play();
         }
         console.log(audiocount);
-        if(audiocount=1){
-            audio.play();
-            console.log("audio");
-          } if(audiocount=0){
-            audio.pause();
-            console.log("audipauseo");
-          }
-
-
+        if (audiocount === 2){
+            document.getElementById('audio').pause();
+            audiocount=0;
+        }
     }
 
     if (event.key === "a" || event.key === "A"){
